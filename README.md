@@ -1,5 +1,7 @@
 # dirserver
 
+It ain't that cool cuz it has vowels.
+
 ## About
 
 Code spike to serve a directory prettified and recursively using [Sinatra](http://sinatrarb.com).
@@ -8,7 +10,7 @@ Uses Twitter's pretty sweet [Bootstrap CSS](http://twitter.github.com/bootstrap)
 
 ## Usage
 
-    DIRSERVE_ROOT=`pwd` ruby dirserve.rb
+    DIRSERVE_ROOT=`pwd` ruby dirserver.rb
 
 ## Todo
 
