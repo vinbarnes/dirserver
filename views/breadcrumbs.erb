@@ -1,0 +1,5 @@
+<ul class="breadcrumb">
+  <% @breadcrumbs.each do |crumb| %>
+    <li class="<%= 'active' if last_breadcrumb?(crumb) %>"><a href="<%= url_for(crumb) %>"><%= crumb %></a> <span class="divider">/</span></li>
+ <% end %>
+</ul>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dirserve</title>
+<link rel="stylesheet"
+href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css">
+<style type="text/css">
+html, body {        background-color: #eee;      }
+.content {
+background-color: #fff;
+padding: 20px;
+margin: 0 -20px;
+        -webkit-border-radius: 0 0 6px 6px;
+           -moz-border-radius: 0 0 6px 6px;
+                border-radius: 0 0 6px 6px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+pre { background-color: #fff; }
+.container > footer p {
+        text-align: center; /* center align it with the container */
+      }
+</style>
+</head>
+
+<body>
+<div class="container">
+  <div class="content">
+  <div class="row">
+    <div class="span14 offset1">
+      <%= erb :breadcrumbs %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span14 offset1">
+      <%= yield %>
+   </div>
+  </div>
+</div>
+<footer>
+  <p>© flogic 2011</p>
+</footer>
+</div>
+</body>
+</html>

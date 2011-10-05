@@ -1,0 +1,20 @@
+<% if File.directory?(@requested_entry_path) %>
+  <table>
+    <thead>
+      <tr>
+	<th>kind</th><th>name</th>
+      <tr>
+    </thead>
+    <tbody>
+      <% @listing.each do |entry| %>
+        <tr>
+          <td><%= (entry[1] and "Dir") or "File" %></td><td><a href="<%= url_for(entry[0]) %>"><%= entry[0] %></a></td>
+	</tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <pre>
+<%=h File.read(@requested_entry_path) %>
+  </pre>
+<% end %>
