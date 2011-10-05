@@ -50,8 +50,17 @@ helpers do
     partial_crumbs.unshift(root_name)
   end
 
-  def last_breadcrumb?(crumb)
-    equal_breadcrumbs?(@breadcrumbs.last, crumb)
+  def add_urls_to_breadcrumbs(crumbs)
+    previous = ''
+    crumbs.map do |crumb|
+      url = File.join(previous, crumb)
+      previous = url
+      [crumb, url]
+    end
+  end
+
+  def last_breadcrumb?(crumbs, crumb)
+    equal_breadcrumbs?(crumbs.last, crumb)
   end
 
   def equal_breadcrumbs?(crumb1, crumb2)

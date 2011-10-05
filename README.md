@@ -15,7 +15,7 @@ Uses Twitter's pretty sweet [Bootstrap CSS](http://twitter.github.com/bootstrap)
 ## Todo
 
 * Tests? No friggin' tests?
-* Fix breadcrumb urls
 * Add auth? Or is that better served with a Rack middleware in front of Dirserve? Yes.
+* Move to modular sinatra style from classic style
 * Syntax highlighting... Whoa back, sonny. Now we're getting sassy.
 * Include bootstrap instead of linking
