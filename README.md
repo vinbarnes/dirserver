@@ -10,7 +10,7 @@ Uses Twitter's pretty sweet [Bootstrap CSS](http://twitter.github.com/bootstrap)
 
 ## Usage
 
-    DIRSERVE_ROOT=`pwd` ruby dirserver.rb
+    DIRSERVER_ROOT=`pwd` ruby dirserver.rb
 
 ## Todo
 

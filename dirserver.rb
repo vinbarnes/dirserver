@@ -20,7 +20,7 @@ helpers do
   alias_method :h, :escape_html
 
   def root
-    @root ||= ENV['DIRSERVE_ROOT']
+    @root ||= ENV['DIRSERVER_ROOT']
   end
   
   def root_path
