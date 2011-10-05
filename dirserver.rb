@@ -6,7 +6,11 @@ get '/*' do
   @breadcrumbs = breadcrumbs(@requested_entry_path)
   @listing = listing_info(directory_listing(@requested_entry_path)) if File.directory?(@requested_entry_path)
 
-  erb :index
+  if blank_splat_params?(@requested_entry)
+    redirect to(url_for(root_name))
+  else
+    erb :index
+  end
 end
 
 helpers do
@@ -37,6 +41,10 @@ helpers do
     end
   end
 
+  def blank_splat_params?(splat)
+    splat.size == 1 && splat.first == ""
+  end
+
   def breadcrumbs(entry)
     partial_crumbs = File.expand_path(entry).split('/') - root_path.split('/')
     partial_crumbs.unshift(root_name)
@@ -51,7 +59,7 @@ helpers do
   end
 
   def build_requested_path(splat)
-    File.join(root_path, splat)
+    File.join(File.dirname(root_path), splat)
   end
 
   def url_for(entry)
