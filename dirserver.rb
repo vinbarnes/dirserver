@@ -80,4 +80,16 @@ helpers do
     file = "page_white_text.png"
     (is_directory and folder) || file
   end
+
+  def age(entry)
+    File.mtime(entry).strftime("%D %T %z")
+  end
+
+  def size(entry)
+    if File.directory?(entry)
+      '--'
+    else
+      File.size(entry)
+    end
+  end
 end
