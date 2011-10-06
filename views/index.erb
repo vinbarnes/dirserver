@@ -2,13 +2,13 @@
   <table>
     <thead>
       <tr>
-	<th>kind</th><th>name</th>
+	<th>name</th>
       <tr>
     </thead>
     <tbody>
       <% @listing.each do |entry| %>
         <tr>
-          <td><%= (entry[1] and "Dir") or "File" %></td><td><a href="<%= url_for(entry[0]) %>"><%= entry[0] %></a></td>
+          <td><img class="listing_icon" src="/images/<%= icon_for(entry[1]) %>" /> <a href="<%= url_for(entry[0]) %>"><%= entry[0] %></a></td>
 	</tr>
       <% end %>
     </tbody>

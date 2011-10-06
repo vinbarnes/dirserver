@@ -74,4 +74,10 @@ helpers do
   def url_for(entry)
     File.join("", @requested_entry, entry)
   end
+
+  def icon_for(is_directory)
+    folder = "folder.png"
+    file = "page_white_text.png"
+    (is_directory and folder) || file
+  end
 end
