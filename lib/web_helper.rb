@@ -37,7 +37,7 @@ module AppHelper::WebHelper
     File.join(File.dirname(root_path), splat)
   end
 
-  def url_for(requested_path, entry)
+  def build_url(requested_path, entry)
     File.join("", requested_path, entry)
   end
 

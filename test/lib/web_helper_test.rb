@@ -141,25 +141,25 @@ class WebHelperTest < Test::Unit::TestCase
     end
   end
 
-  describe '#url_for' do
+  describe '#build_url' do
     setup do
       @requested_path = '/test_root/tusk'
     end
 
     should 'accept requested path and entry arguments' do
-      assert_nothing_raised { @tester.url_for(@requested_path, 'tail') }
+      assert_nothing_raised { @tester.build_url(@requested_path, 'tail') }
     end
 
     should 'raise error if only requested path given' do
-      assert_raises(ArgumentError) { @tester.url_for(@requested_path) }
+      assert_raises(ArgumentError) { @tester.build_url(@requested_path) }
     end
 
     should 'raise error if only requested entry given' do
-      assert_raises(ArgumentError) { @tester.url_for('dsb.mp3') }
+      assert_raises(ArgumentError) { @tester.build_url('dsb.mp3') }
     end
 
     should 'return relative path' do
-      assert_equal File.join(@requested_path, 'dsb.mp3'), @tester.url_for(@requested_path, 'dsb.mp3')
+      assert_equal File.join(@requested_path, 'dsb.mp3'), @tester.build_url(@requested_path, 'dsb.mp3')
     end
   end
 
