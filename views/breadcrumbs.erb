@@ -1,5 +1,5 @@
 <ul class="breadcrumb">
-  <% add_urls_to_breadcrumbs(@breadcrumbs).each do |e| %>
+  <% breadcrumb_url_map(@breadcrumbs).each do |e| %>
     <li class="<%= 'active' if last_breadcrumb?(@breadcrumbs, e.first) %>"><a href="<%= e.last %>"><%= e.first %></a> <span class="divider">/</span></li>
  <% end %>
 </ul>
