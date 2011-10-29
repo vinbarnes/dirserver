@@ -15,6 +15,26 @@ class FileHelperTest < Test::Unit::TestCase
     end
   end
 
+  describe '#basename' do
+    should 'accept a path argument' do
+      assert_nothing_raised { @tester.basename('/some/path') }
+    end
+
+    should 'raise error if not given a path argument' do
+      assert_raises(ArgumentError) { @tester.basename() }
+    end
+
+    should 'return filename if path given is a file' do
+      path = '/some/path/to/file.rb'
+      assert_equal 'file.rb', @tester.basename(path)
+    end
+
+    should 'return directory name if path given is a directory' do
+      path = '/some/path/to/'
+      assert_equal 'to', @tester.basename(path)      
+    end
+  end
+
   describe '#directory_listing' do
     should 'accept a path argument' do
       assert_nothing_raised { @tester.directory_listing(@test_dir) }

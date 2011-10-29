@@ -6,6 +6,10 @@ module AppHelper::FileHelper
   attr_accessor :pwd
   attr_accessor :root, :root_path, :root_name
   
+  def basename(path)
+    File.basename(path)
+  end
+
   def directory_listing(dir)
     self.pwd = File.expand_path(dir)
     Dir.entries(pwd) - %w[. ..]
